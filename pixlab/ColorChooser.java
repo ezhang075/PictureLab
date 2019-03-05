@@ -1,4 +1,6 @@
 import javax.swing.JColorChooser;
+import javax.swing.UIManager;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import java.awt.Color;
   
@@ -38,6 +40,10 @@ public class ColorChooser
   {
     Color pickedColor = ColorChooser.pickAColor();
     System.out.println(pickedColor);
+    
+    int length = 80;
+UIManager.put("ColorChooser.swatchesRecentSwatchSize", new Dimension(length, length));
+UIManager.put("ColorChooser.swatchesSwatchSize", new Dimension(length, length));
   }
   
 }
