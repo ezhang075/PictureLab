@@ -11,6 +11,17 @@ public class IntArrayWorker
     matrix = theMatrix;
   }
   
+  public int getCount(int c)
+  {
+      int count = 0 ;
+      for (int [] row : matrix)
+      {
+          for (int pixel : row)
+            if (pixel == c)
+                count++;
+  }
+   return count; 
+ } 
   /**
    * Method to return the total 
    * @return the total of the values in the array
