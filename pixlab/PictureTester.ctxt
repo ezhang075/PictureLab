@@ -11,7 +11,7 @@ comment3.target=void\ testMirrorVertical()
 comment3.text=Method\ to\ test\ mirrorVertical
 comment4.params=
 comment4.target=void\ testMirrorTemple()
-comment4.text=Method\ to\ test\ mirrorTemple
+comment4.text=public\ void\ testMirrorVerticalRightToLeft()\r\n\ \ {\r\n\ \ \ \ //Pixel[][]\ pixels\ \=\ this.getPixels2D();\r\n\ \ \ \ Pixel\ leftPixel\ \=\ null;\r\n\ \ \ \ Pixel\ rightPixel\ \=\ null;\r\n\ \ \ \ int\ width\ \=\ pixels[0].length;\r\n\ \ \ \ for\ (int\ row\ \=\ 0;\ row\ <\ pixels.length;\ row++)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ for\ (int\ col\ \=\ 0;\ col\ <\ width\ /\ 2;\ col++)\r\n\ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ rightPixel\ \=\ pixels[row][col];\r\n\ \ \ \ \ \ \ \ leftPixel\ \=\ pixels[row][width\ -\ 1\ -\ col];\r\n\ \ \ \ \ \ \ \ leftPixel.setColor(rightPixel.getColor());\r\n\ \ \ \ \ \ }\r\n\ \ \ \ }\r\n\ \ }\r\n\ \ \r\n/**\ Method\ to\ test\ mirrorTemple
 comment5.params=
 comment5.target=void\ testCollage()
 comment5.text=Method\ to\ test\ the\ collage\ method
