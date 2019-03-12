@@ -36,23 +36,22 @@ public class PictureTester
     caterpillar.explore();
   }
   
-  /*public void testMirrorVerticalRightToLeft()
+ 
+   public static void testMirrorVerticalRightToLeft()
   {
-    //Pixel[][] pixels = this.getPixels2D();
-    Pixel leftPixel = null;
-    Pixel rightPixel = null;
-    int width = pixels[0].length;
-    for (int row = 0; row < pixels.length; row++)
-    {
-      for (int col = 0; col < width / 2; col++)
-      {
-        rightPixel = pixels[row][col];
-        leftPixel = pixels[row][width - 1 - col];
-        leftPixel.setColor(rightPixel.getColor());
-      }
-    }
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRightToLeft();
+    caterpillar.explore();
   }
   
+   public static void testMirrorHorizontal()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontal();
+    caterpillar.explore();
+  }
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -62,6 +61,21 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorHorizontalBottomToTop()
+  {
+   Picture caterpillar = new Picture("caterpillar.jpg");
+   caterpillar.explore();
+   caterpillar.mirrorHorizontalBottomToTop();
+   caterpillar.explore();
+  }
+  
+  public static void testMirrorArms()
+  {
+   Picture snowman = new Picture("snowman.jpg");
+   snowman.explore();
+   snowman.mirrorArms();
+   snowman.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -85,7 +99,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    //testMirrorVerticalRightToLeft();
+    testMirrorVerticalRightToLeft();
     testZeroBlue();
     testKeepOnlyBlue();
     //testKeepOnlyRed();
