@@ -76,6 +76,14 @@ public class PictureTester
    snowman.mirrorArms();
    snowman.explore();
   }
+  
+  public static void testMirrorRightArm()
+  {
+   Picture snowman = new Picture("snowman.jpg");
+   snowman.explore();
+   snowman.mirrorRightArm();
+   snowman.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
