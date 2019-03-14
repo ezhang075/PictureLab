@@ -52,6 +52,24 @@ public class PictureTester
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
   }
+  
+  public static void testMirrorGull()
+  {
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorGull();
+    seagull.explore();
+  }
+  
+  public static void testCopy()
+  {
+      Picture seagull = new Picture("seagull.jpg");
+      seagull.explore();
+      Picture flower = new Picture("flower1.jpg");
+      seagull.copy(flower,100,200);
+      seagull.explore();
+      
+  }
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {

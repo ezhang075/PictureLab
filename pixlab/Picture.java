@@ -177,6 +177,31 @@ public class Picture extends SimplePicture
     }
   }
   
+   public void copy(Picture fromPic, 
+                 int startRow, int startCol,
+                 int fSR,      int fSC,
+                 int fER,      int fEC)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = fSR, toRow = startRow; 
+         fromRow < fER &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = fSC, toCol = startCol; 
+           fromCol < fEC &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
   public void mirrorArms()
   {
     int mirrorPoint = 193;
@@ -221,25 +246,44 @@ public class Picture extends SimplePicture
   
   public void mirrorGull()
   {
-    int mirrorPoint2 = 198;
+    int mirrorPoint = 345;
+    Pixel rightPixel = null;
+    Pixel leftPixel = null;
+    Pixel[][] pixels = this.getPixels2D();   
+    
+    // Seagull reflection 
+    for (int row = 235; row < 323; row++)
+    {
+      for (int col = 238; col < mirrorPoint; col++)
+      {
+        rightPixel = pixels[row][col];      
+        leftPixel = pixels[row][mirrorPoint - col + mirrorPoint/3];
+        leftPixel.setColor(rightPixel.getColor());  
+      }
+    }
+  }
+
+  
+  public void mirrorRightGull()
+  {
+    int mirrorPoint2 = 271;
     Pixel topPixel = null;
     Pixel bottomPixel = null;
     int count = 0;
     Pixel[][] pixels = this.getPixels2D();
     
     // loop through the rows
-    for (int row = 171; row < mirrorPoint2; row++)
+    for (int row = 200; row < mirrorPoint2; row++)
     {
       // loop from 13 to just before the mirror point
-      for (int col = 239; col < 294; col++)
+      for (int col = 100; col < 500; col++)
       {
         topPixel = pixels[row][col];
-        bottomPixel = pixels[mirrorPoint2 - row + mirrorPoint2][col];
+        bottomPixel = pixels[row][mirrorPoint2 - row + mirrorPoint2];
         bottomPixel.setColor(topPixel.getColor());
       }
     }
-}   
-
+  }
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
