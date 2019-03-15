@@ -202,6 +202,7 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
   public void mirrorArms()
   {
     int mirrorPoint = 193;
@@ -401,7 +402,9 @@ public void mirrorHorizontalBottomToTop()
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][col+1];
-        rightColor = rightPixel.getColor();
+        //opPixel = pixels[row][col];
+        //bottomPixel = pixels[row + 1][col];
+        //rightColor = rightPixel.getColor();
         if (leftPixel.colorDistance(rightColor) > 
             edgeDist)
           leftPixel.setColor(Color.BLACK);

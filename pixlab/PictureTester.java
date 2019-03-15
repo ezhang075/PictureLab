@@ -63,11 +63,18 @@ public class PictureTester
   
   public static void testCopy()
   {
-      Picture seagull = new Picture("seagull.jpg");
-      seagull.explore();
-      Picture flower = new Picture("flower1.jpg");
-      seagull.copy(flower,100,200);
-      seagull.explore();
+      //Picture louisXVI = new Picture("snowman.jpg");
+      //louisXVI.copy(louisXVI, 10, 10, 60, 160, 180, 230);
+      //louisXVI.explore();
+      
+      //Picture seagull = new Picture("seagull.jpg");
+      //seagull.explore();
+      //Picture flower = new Picture("flower1.jpg");
+      //seagull.copy(flower,10,100);
+      //seagull.explore();
+      //Picture snowman = new Picture("snowman.jpg");
+      //seagull.copy(snowman,200,200);
+      //seagull.explore();
       
   }
   /** Method to test mirrorTemple */
@@ -114,7 +121,7 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
+    swan.edgeDetection(6);
     swan.explore();
   }
   
